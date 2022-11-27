@@ -16,8 +16,8 @@ horas_mes = 6 * 22
 salario_bruto = valor_hora * horas_mes
 
 valor_ir = salario_bruto * 0.11
-valor_inss = salario_bruto * 0.08
-valor_sindicato = salario_bruto * 0.05
+valor_inss = (salario_bruto - valor_ir) * 0.08
+valor_sindicato = (salario_bruto - valor_ir - valor_inss) * 0.05
 
 salario_liquido = salario_bruto - (valor_ir + valor_inss + valor_sindicato)
 
