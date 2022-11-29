@@ -22,12 +22,13 @@ def entrada(tipo):
 
 
 valor = ""
-while len(valor) < 3:
+while len(valor) <= 3:
     nome = entrada("nome")
     valor = nome
 
 valor = -1
-while valor not in range(151):
+r = range(151)
+while valor not in r:
     idade = entrada("idade")
     valor = idade
 
