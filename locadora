@@ -1,0 +1,144 @@
+import os
+import time
+
+def menu1():
+    os.system("clear")
+
+    print("======")
+    print("Bem vindo à locadorade carros!")
+    print("======")
+    print("O que deseja fazer?")
+    print("0 - Mostrar portifolio | 1 - Alugar um carro | 2 - Devolver um carro")
+    opcao = int(input())
+
+    return (opcao)
+
+
+def portifolio():
+    os.system("clear")
+    print("======")
+    print("Portifolio")
+    print("======")    
+
+    port = ["[0]: Chevrolet Tracker - R$ 120 / dia",
+    "[1]: ChevroletOnix - R$ 90 / dia",
+    "[2]: Chevrolet Spin - R$ 150 / dia",
+    "[3]: Hyundai HB20 - R$ 85 / dia",
+    "[4]: Hyundai Tucson - R$ 120 / dia",
+    "[5]: Fiat Uno - R$ 60 / dia",
+    "[6]: Fiat Mobi - R$ 70 / dia",
+    "[7]: Fiat Pulse - R$ 130 / dia"]
+
+    for x in port:
+        print(x)
+
+    print("\n")
+    print("Aperte qualquer teclapara voltar atela inicial.")
+    i = input()
+
+
+def alugar(disp, val):
+    os.system("clear")
+    print("[ ALUGAR ] Dê uma olhada em nosso portifólio.")
+    print("\n")
+
+    for x in disp:
+        if x[-1] != "*":
+            print(x)
+
+    print("\n")
+    print("=====")
+    print("Escolha o codigo do carro: ")
+    i = int(input())
+    print("Por quantos dias pretende alugar:")
+    dias = int(input())
+
+    carro = disp[i].split()[1] + " " + disp[i].split()[2]
+    total = val[i] * dias
+
+    os.system("clear")
+
+    print(f"Você escolheu {carro} por {dias} dias")
+    print(f"O aluguel totaliza R$ {total}. Deseja alugar?")
+    print("\n")
+    print("0 sim | 1 não")
+    resposta = int(input())
+
+    if resposta ==0:
+        disp[i] = disp[i] + "*" 
+        print("Parabéns você alugou o {carro} por {dias} dias.")
+        print("\n")
+        print("=====")
+        print("0 - Continuar | 1 - Sair")
+        while resposta not in [0, 1]:
+            resposta = int(input())
+            if resposta == 0:
+                break
+            elif resposta == 1:
+                exit()
+            
+            print("Opcao invalida, escolha 0 ou 1")
+
+
+
+def devolver(disp, val):    
+    indice = []
+
+    os.system("clear")
+    print("Segue a lista de carros alugados. Qual você deseja devolver ?")
+
+    for y, x in enumerate(disp):
+        if x[-1] == "*":
+            print(x[:-1])
+            indice.append(y)
+
+    if indice != []:
+        print("\n")
+        print("=====")
+        print("Escolha o codigo do carro que deseja devolver: ")
+        i = int(input())            
+
+        if i in indice:
+            disp[i] = disp[i][:-1]
+
+        carro = disp[i].split()[1] + " " + disp[i].split()[2]
+
+        print(f"Obrigado por devolver o carro {carro}.")
+        print("\n")
+        print("=====")
+        print("0 sim | 1 não")
+        resposta = int(input())
+
+        if resposta == 1:
+            exit(1)
+    else:
+        print("Não existem carros para serem devolvidos.")
+        input()
+
+
+
+
+
+disponivel = ["[0]: Chevrolet Tracker - R$ 120 / dia",
+    "[1]: ChevroletOnix - R$ 90 / dia",
+    "[2]: Chevrolet Spin - R$ 150 / dia",
+    "[3]: Hyundai HB20 - R$ 85 / dia",
+    "[4]: Hyundai Tucson - R$ 120 / dia",
+    "[5]: Fiat Uno - R$ 60 / dia",
+    "[6]: Fiat Mobi - R$ 70 / dia",
+    "[7]: Fiat Pulse - R$ 130 / dia"]
+
+valor = [120, 90, 150, 85, 120,60, 70, 130]
+
+locado = []
+while True:
+    opcao = menu1()
+    match opcao:
+        case 0: 
+            portifolio()
+            
+        case 1:
+            alugar(disponivel, valor)
+
+        case 2:
+            devolver(disponivel, valor)
