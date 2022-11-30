@@ -81,7 +81,7 @@ def alugar(disp, val):
 
 
 
-def devolver(disp, val):    
+def devolver(disp, val):
     indice = []
 
     os.system("clear")
