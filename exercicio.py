@@ -28,3 +28,4 @@ carros = [("Creta", 150),("Fiat Mobi", 75),("HB20 Sedan",100)]
 for x in carros:
     print(f"Carro {x[0]}, valor de locacao {x[1]}")
 
+print("")
