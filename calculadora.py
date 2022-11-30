@@ -25,10 +25,6 @@ def calcular(val1, val2, operacao):
             operacao = "**"
             resultado = val1 ** val2
         
-        case _:
-            print("Fim")
-            exit(1)
-
     return resultado, operacao, nome
 
 
@@ -36,15 +32,20 @@ print("##### Calculadora #####")
 print("Escolha uma opção:")
 print("(1) soma")
 print("(2) subtração")
-print("(3) miltiplicação")
+print("(3) multiplicação")
 print("(4) divisão")
 print("(5) potencia")
 print("(9) fim")
 print("\n")
 operando = int(input("opção : "))
 
+if operando == 9:
+    print("Fim")
+    exit(1)
+
+
 val1 = float(input("insira o valor 1 : "))
 val2 = float(input("insira o valor 2 : "))
 
 resultado, opcao, nome = calcular(val1, val2, operando)
-print(f"{nome} de {val1} {opcao} {val2} é = {resultado}")
+print(f"valor de {val1} {opcao} {val2} é = {resultado}")
