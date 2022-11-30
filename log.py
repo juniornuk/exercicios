@@ -1,7 +1,7 @@
 import logging
 
 #mais opcoes de formarto de log no google =  python logging format
-formato_log = ("%(asctime)s , %(lineno)d | %(message)s")
+formato_log = ("%(asctime)s , %(levelname)s | %(message)s")
 
 #CONFIGURACAO DO LOG
 #filename, guarda o nome do arquivo
@@ -17,5 +17,5 @@ log.info("info nivel 20")
 log.warning("warning nivel 30")
 log.error("error nivel 40")
 log.critical("critical nivel 50")
-log.level
+#log.level
 
