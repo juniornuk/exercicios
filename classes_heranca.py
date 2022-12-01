@@ -1,19 +1,27 @@
-class area:
+class animal:
     def __init__(self):
-        self.cor = ""
-        self.base = 0 
-        self.altura = 0
+        self.pelagem = "pena"
+        self.patas = 2
+        self.cor = "branco"
 
-    def calcula(b, a):
-        return b * a        
+class dog(animal):
+    def __init__(self):
+        self.faz = "late"        
 
 
 
-quadrado = area
+especie = animal()
+cachorro = dog()
+print(especie.pelagem)
+print(especie.patas)
+print(especie.cor)
 
-quadrado.base = 6
-quadrado.altura = 3
-quadrado.cor = "amarelo"
 
-print(quadrado.calcula(quadrado.base , quadrado.altura))
-print(quadrado.cor)
+cachorro.pelagem = "pelo"
+cachorro.patas = 4
+cachorro.cor = "preto"
+print("\n")
+print(cachorro.pelagem)
+print(cachorro.patas)
+print(cachorro.cor)
+print(cachorro.faz)
