@@ -1,5 +1,7 @@
 import random
 import seaborn as sns
+import pandas as pd
+import numpy as np
 
 
 class Academia():
@@ -82,4 +84,4 @@ for k in range(50):
     list_chaos+= [academia.calcula_caos()]
 
 
-sns.disploy (list_chaos)
+sns.displot(list_chaos)
